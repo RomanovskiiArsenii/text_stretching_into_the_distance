@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: rgba(255, 255, 255, 0.164);
+    color: orange;
+}
+
+body {
+    font-family: 'Abel', Arial, sans-serif;
+    font-weight: bold;
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
+main {
+    margin: calc(var(--coeff) / 5) auto;
+    width: 100%;
+}
+
+.text-cutted {
+    font-size: var(--coeff);
+    line-height: 1em;
+    text-align: center;
+}
+
+.top {
+    height: 0.5em;
+    overflow: hidden;
+}
+
+.bottom {
+    overflow: hidden;
+    height: 0.5em;
+}
+
+.bottom p {
+    margin: -0.5em;
+}
+
+.upper {
+    transform-origin: top;
+    transform-style: preserve-3d;
+    transform: perspective(100px) rotateX(calc(var(--rotateCoeff) * -1)) skewX(60deg) scaleY(12);
+
+    background: -webkit-linear-gradient(top, rgb(130, 130, 130), rgb(0, 0, 0));
+    background-clip: text;
+    color: transparent;
+}
+
+.lower {
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(100px) rotateX(var(--rotateCoeff)) skewX(-60deg) scaleY(12);
+
+    background: -webkit-linear-gradient(top, rgb(0, 0, 0), rgb(215, 215, 215));
+    background-clip: text;
+    color: transparent;
+}
